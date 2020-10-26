@@ -2,7 +2,6 @@
  const request = require("request")
  const app = express()
  const bodyParser = require("body-parser");
-const { json } = require("body-parser");
 
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/views'));
@@ -30,11 +29,18 @@ app.get("/delete",(req,res)=>{
 })
 
 app.post("/get",(req,res)=>{
-    var api = req.body.apilink;
+    var apikey = null
+    var opt = null
 
-    let opt = {
+    var api = req.body.apilink;
+    var apikey = req.body.apikey
+
+    opt = {
         method:'get',
-        uri:api
+        uri:api,
+        headers: {
+            apikey: apikey
+          },
     }
     request(opt,(err,response,body)=>{
         if(err){
@@ -51,24 +57,35 @@ app.post("/get",(req,res)=>{
     })
 })
 app.post("/post",(req,res)=>{
+    var apikey = null
+    var opt = null
+    var opt2 = null
+    
     var api = req.body.apilink;
+    var apikey = req.body.apikey
     var query_name = req.body.query_name;
     var query_value = req.body.query_value;
 
     console.log(query_name)
-    let opt = {
+    opt = {
         method:'post',
         uri:api,
         form:{ [query_name] : query_value },
-        json:true
+        json:true,
+        headers: {
+            apikey: apikey
+          },
     }
     request.post(opt,(err,response,body)=>{
         console.log(body)
     })
 
-    let opt2 = {
+    opt2 = {
         method:'get',
         uri:api,
+        headers: {
+            apikey: apikey
+          },
     }
     request(opt2,(err,response,body)=>{
         if(err){
@@ -86,13 +103,19 @@ app.post("/post",(req,res)=>{
 
 })
 app.post("/delete",(req,res)=>{
+    var apikey = null
+    var opt = null
+    var opt2 = null
     var api = req.body.apilink;
     var query_id = new Number;
     query_id = req.body.query_id;
 
-    let opt = {
+   opt = {
         method:'delete',
-        uri:api+"/"+query_id
+        uri:api+"/"+query_id,
+        headers: {
+            apikey: apikey
+          },
         // form:{ id : query_id },
         // json:true
     }
@@ -100,9 +123,12 @@ app.post("/delete",(req,res)=>{
         console.log(body)
     })
 
-    let opt2 = {
+    opt2 = {
         method:'get',
         uri:api,
+        headers: {
+            apikey: apikey
+          }
     }
     request(opt2,(err,response,body)=>{
         if(err){
