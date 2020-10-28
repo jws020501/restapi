@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>sellerpol</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>판매자 배송정책 조회2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>수량별 차등 적용여부 </th>
+                <th>수량별 차등 적용 기준수량</th>
+                <th>배송비 결제방식 (Y:선결제, N:착불)</th>
+                <th>반품/교환 배송비 (편도)</th>
+                <th>배송가능지역</th>
+                <th>도서산간 추가 배송비</th>
+                <th>도서산간 추가 배송비</th>
+                <th>출고기한 - 날짜</th>
+                <th>출고기한 - 시간</th>
+                <th>주말, 공휴일 발송여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].differenceYn %></td>
+                    <td><%= message.data[i].differenceCount %></td>
+                    <td><%= message.data[i].prepaymentYn %></td>
+                    <td><%= message.data[i].claimShipFee %></td>
+                    <td><%= message.data[i].shipArea %></td>
+                    <td><%= message.data[i].jejuShipFee %></td>
+                    <td><%= message.data[i].iislandMountainShipFee %></td>
+                    <td><%= message.data[i].releaseDay %></td>
+                    <td><%= message.data[i].releaseTime %></td>
+                    <td><%= message.data[i].holidayExceptYn %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+    <a href="sellerpol1">판매자 배송정책 조회1</a>
+    <a href="sellerpol3">판매자 배송정책 조회3</a>
+</body>
+</html>

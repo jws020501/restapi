@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>notice</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품정보고시 조회</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>정책번호</th>
+                <th>정책명</th>
+                <th>상품정보고시 항목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].groupNoticeNo %></td>
+                    <td><%= message.data[i].groupNoticeNoName %></td>
+                    <td><a href="/notice/<%= i %>" > 상세정보 </a></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+</body>
+</html>

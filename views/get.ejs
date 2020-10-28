@@ -3,6 +3,16 @@
 <head>
     <title>api모음</title>
     <link rel="stylesheet" href="css.css">
+    <script>
+        function check(){
+            var value = document.getElementById("apikey").value.trim()
+            if(!value){
+                alert("apikey 값이 비어있습니다")
+                return false
+            }
+            return true
+        }
+    </script>
 </head> 
 <body>
     <header>
@@ -10,10 +20,11 @@
             <h1>api 불러오기</h1>
             <a href="/post">api 추가하기</a>
             <a href="/delete">api 삭제하기</a>
+            <a href="/wemake">위메프api</a>
         </div>
     </header>
     <div>
-        <form method="POST" action="/get">
+        <form method="POST" action="/get" onsubmit= "return check()"">
             <input id="apilink" name="apilink" value="" type="url" placeholder="api주소">
             <input id="apikey" name="apikey" value="" type="text" placeholder="apikey">
             <input type="submit" value="쿼리전송">

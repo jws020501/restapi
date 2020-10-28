@@ -3,6 +3,16 @@
 <head>
     <title>api모음</title>
     <link rel="stylesheet" href="css.css">
+    <script>
+        function check(){
+            var value = document.getElementById("apikey").value.trim()
+            if(!value){
+                alert("apikey 값이 비어있습니다")
+                return false
+            }
+            return true
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -11,5 +21,6 @@
         </div>
     </header>
     <a href="get">api불러오기</a>
+    <a href="wemake">위메프api</a>
 </body>
 </html>

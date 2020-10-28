@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>category</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>카테고리</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>대분류카테고리</th>
+                <th>중분류카테고리</th>
+                <th>소분류카테고리</th>
+                <th>세분류카테고리</th>
+                <th>세분류카테고리코드</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].lcateName %></td>
+                    <td><%= message.data[i].mcateName %></td>
+                    <td><%= message.data[i].scateName %></td>
+                    <td><%= message.data[i].dcateName %></td>
+                    <td><%= message.data[i].dcateCode %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+</body>
+</html>

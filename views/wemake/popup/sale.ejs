@@ -1,0 +1,35 @@
+<html lang="ko">
+<head>
+    <title>basic</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>판매정보</h1>
+    <form method="POST" action="/popup/sale">
+    <table>
+        <tr><td>판매기간 구분</td><td><input id="salePeriod" value="" type="text"></td><td><small>(P:기간설정-기본값, A:상시판매) ※판매종료날짜는 기간설정으로만 수정할 수 있습니다.)</small></td></tr>
+        <tr><td>판매기간 시작일</td><td><input id="saleStartDate" value="" type="text"></td><td><small>(yyyy-MM-dd HH:00) ※ 판매시작 이후 변경 불가</small></td></tr>
+        <tr><td>판매기간 종료일</td><td><input id="saleEndDate" value="" type="text"></td><td><small>(yyyy-MM-dd HH:00)</small></td></tr>
+        <tr><td>정상가격 (0~999999999)</td><td><input id="originPrice" value="" type="text"></td></tr>
+        <tr><td>판매가격 (0~999999999)</td><td><input id="salePrice" value="" type="text"></td></tr>
+        <tr><td>상품 재고수량</td><td><input id="stockCount" value="" type="text"></td><td><small>옵션이 없을 경우 입력 (0 ~ 99999)</small></td></tr>
+        <tr><td>과세여부 (Y:과세,N:면세)</td><td><input id="taxYn" value="" type="text"></td></tr>
+        <tr><td>최소구매수량(1 ~ 999)-기본값 1</td><td><input id="purchaseMinCount" value="" type="text"></td></tr>
+        <tr><td>1인당 구매제한 사용여부</td><td><input id="purchaseLimitYn" type="text" value=""></td><td><small>(Y:사용-구매제한타입과 구매제한개수 필수입력,N:미사용)</small></td></tr>
+        <tr><td>구매제한 타입</td><td><input id="purchaseLimitDuration" type="text" value=""></td><td><small>(O:1회, P:기간제한-구매제한일자 필수입력)</small></td></tr>
+        <tr><td>구매제한 일자 (1 ~ 90)</td><td><input id="purchaseLimitDay" type="text" value=""></td></tr>
+        <tr><td>구매제한 개수</td><td><input id="purchaseLimitCount" type="text" value=""></td><td><small>구매제한 일자에 대한 구매제한 개수 (0 ~ 9999)</small></td></tr>
+        <tr><td>장바구니제한 여부</td><td><input id="basketLimitYn" type="text" value=""></td><td><small> (Y: 제한사용, N: 제한미사용 / ※ 카테고리 기준에 따라 장바구니제한 여부는 변경 적용될 수 있음)</small></td></tr>
+        <tr><td>기준가격 근거정보 타입</td><td><input id="referencePriceType" type="text" value=""></td><td><small> ONL:온라인판매가 WMP:위메프가-미등록/정상가격 미입력) BIZ:사업자혜택가)</small></td></tr>
+    </table>
+    <input type="submit" value="쿼리전송">
+    </form>
+</body>
+</html>

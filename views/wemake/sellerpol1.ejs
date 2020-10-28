@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>sellerpol</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>판매자 배송정책 조회</h1>
+    <table>
+        <thead>
+            <tr>
+                <!-- 1 -->
+                <th>그룹 판매업체 ID</th>
+                <th>배송정보 번호</th>
+                <th>배송정보명</th>
+                <th>배송주체 </th>
+                <th>배송방법</th>
+                <th>배송유형</th>
+                <th>배송비종류</th>
+                <th>배송비</th>
+                <th>배송비 노출여부 </th>
+                <th>조건부 무료 기준금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].partnerGroupId %></td>
+                    <td><%= message.data[i].shipPolicyNo %></td>
+                    <td><%= message.data[i].shipPolicyName %></td>
+                    <td><%= message.data[i].shipMng %></td>
+                    <td><%= message.data[i].shipMethod %></td>
+                    <td><%= message.data[i].bundleKind %></td>
+                    <td><%= message.data[i].shipType %></td>
+                    <td><%= message.data[i].shipFee %></td>
+                    <td><%= message.data[i].shipFeeDisplayYn %></td>
+                    <td><%= message.data[i].freeCondition %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+    <a href="sellerpol2">판매자 배송정책 조회2</a>
+    <a href="sellerpol3">판매자 배송정책 조회3</a>
+</body>
+</html>

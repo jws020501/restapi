@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>sellerpol</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>판매자 배송정책 조회3</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>출고지 - 우편번호</th>
+                <th>출고지-기본주소(도로명)</th>
+                <th>출고지-상세주소(도로명)</th>
+                <th>출고지-기본주소(지번)</th>
+                <th>출고지-상세주소(지번)</th>
+                <th>회수지-우편번호</th>
+                <th>회수지-기본주소(도로명)</th>
+                <th>회수지-상세주소(도로명)</th>
+                <th>회수지-기본주소(지번)</th>
+                <th>회수지-상세주소(지번)</th>
+                <th>안심번호 서비스 사용 노출여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].releaseZipCode %></td>
+                    <td><%= message.data[i].releaseRoadAddress1 %></td>
+                    <td><%= message.data[i].releaseRoadAddress2 %></td>
+                    <td><%= message.data[i].releaseAddress1 %></td>
+                    <td><%= message.data[i].releaseAddress2 %></td>
+                    <td><%= message.data[i].returnZipCode %></td>
+                    <td><%= message.data[i].returnRoadAddress1 %></td>
+                    <td><%= message.data[i].returnRoadAddress2 %></td>
+                    <td><%= message.data[i].returnAddress1 %></td>
+                    <td><%= message.data[i].returnAddress2 %></td>
+                    <td><%= message.data[i].safetyNoDisplayYn %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+    <a href="sellerpol1">판매자 배송정책 조회1</a>
+    <a href="sellerpol2">판매자 배송정책 조회2</a>
+</body>
+</html>

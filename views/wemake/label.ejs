@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>label</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>라벨</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>라벨번호</th>
+                <th>라벨명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].labelNo %></td>
+                    <td><%= message.data[i].labelName %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+</body>
+</html>

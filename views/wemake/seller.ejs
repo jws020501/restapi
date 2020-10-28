@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>notice</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>판매자 배송정책 조회</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>배송정보 번호</th>
+                <th>배송정보명</th>
+                <th>배송주체</th>
+                <th>배송방법</th>
+                <th>배송유형</th>
+                <th>배송비유형</th>
+                <th>배송비</th>
+                <th>반품/교환 배송비(편도)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < message.data.length; i++) { %>
+                <tr>
+                    <td><%= message.data[i].shipPolicyNo %></td>
+                    <td><%= message.data[i].shipPolicyName %></td>
+                    <td><%= message.data[i].shipMngs %></td>
+                    <td><%= message.data[i].shipMethod %></td>
+                    <td><%= message.data[i].bundleKind %></td>
+                    <td><%= message.data[i].shipType %></td>
+                    <td><%= message.data[i].shipFee %></td>
+                    <td><%= message.data[i].claimShipFee %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>basic</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function popupship(){
+            window.open("/popup/basicship","basicship","width=800, height=600, left=100, top=50")
+        }
+    </script>
+</head>
+<body>
+    <h1>기본정보</h1>
+    <form method="POST" action="/popup/basic">
+    <table>
+        <tr><td>상품명 (최대70자)</td><td><input id="productName" value="" type="text"></td></tr>
+        <tr><td>상품유형</td><td><input id="productType" value="" type="text"></td><td><small>(N:새상품, U:중고, R:리퍼, B:반품(리세일), O:주문제작, E:E티켓, T:렌탈, M:마트상품)</small></td></tr>
+        <tr><td>세부 카테고리</td><td><input id="dcateCode" value="" type="text"></td></tr>
+        <tr><td>상품유형</td><td><input id="shipPolicyNo" value="" type="text"></td></tr>
+        <tr><td>배송 정책번호</td><td><input id="productType" value="" type="text"></td></tr>
+        <tr><td>배송정보</td><td><input type="button" value="배송정보" onclick="popupship()"></td><td><small>(배송 정책번호가 '상품별 배송’인 경우 배송정보 필수값입력 / '묶음 배송’인 경우 배송정보 미입력)</small></td></tr>
+        <tr><td>19금 제한여부</td><td><input id="adultLimitYn" value="" type="text"></td><td><small>(Y:제한사용, N:제한미사용-기본값 / ※ 카테고리 기준에 따라 19금 제한여부는 변경 적용될 수 있음)</small></td></tr>
+        <tr><td>노출정보</td><td><input id="productType" value="" type="text"></td><td><small>(Y:노출, D:비노출-상세접근가능, N:비노출-상세접근불가)</small></td></tr>
+        <tr><td>사업자 전용상품여부</td><td><input id="bizYn" type="text" value=""></td><td><small>(Y: 대상 / N: 대상아님(기본값) (등록 후 수정불가))</small></td></tr>
+        <tr><td>브랜드번호</td><td><input id="brandNo" type="text" value=""></td></tr>
+        <tr><td>사제조사번호</td><td><input id="makerNo" type="text" value=""></td></tr>
+    </table>
+    <input type="submit" value="쿼리전송">
+    </form>
+</body>
+</html>

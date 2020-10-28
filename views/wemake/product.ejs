@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>product</title>
+    <script>
+        function basicpopup(){
+            window.open("/popup/basic","basic","width=800, height=600, left=100, top=50")
+        }
+        function salepopup(){
+            window.open("/popup/sale","basic","width=800, height=600, left=100, top=50")
+        }
+        function detailpopup(){
+            window.open("/popup/detail","basic","width=800, height=600, left=100, top=50")
+        }
+        function optionpopup(){
+            window.open("/popup/option","basic","width=800, height=600, left=100, top=50")
+        }
+        function noticeListpopup(){
+            window.open("/popup/noticeList","basic","width=800, height=600, left=100, top=50")
+        }
+        function etcpopup(){
+            window.open("/popup/ect","basic","width=800, height=600, left=100, top=50")
+        }
+        function branchListpopup(){
+            window.open("/popup/branchlist","basic","width=800, height=600, left=100, top=50")
+        }
+
+        function check(){
+
+        }
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품등록,수정</h1>
+    <form method="POST" action="/product" onsubmit="return">
+    <table>
+        <tr><td>상품번호</td><td><input id="productNo" type="text" placeholder="빈값=생성, 입력=수정"></td></tr>
+        <tr><td>기본정보</td><td><input id="basic" type="button" value="기본정보" onclick="basicpopup()"></td></tr>
+        <tr><td>판매정보</td><td><input id="sale" type="button" value="판매정보"  onclick="salepopup()"></td></tr>
+        <tr><td>상세정보</td><td><input id="detail" type="button" value="상세정보" onclick="detailpopup()"></td></tr>
+        <tr><td>옵션정보</td><td><input id="option" type="button" value="옵션정보" onclick="optionpopup()"></td></tr>
+        <tr><td>상품정보고시 (최대 10개)</td><td><input id="noticeList" type="button" value="상품정보고시"  onclick="noticeListpopup()"></tr>
+        <tr><td>기타정보</td><td><input id="etc" type="button" value="기타정보" onclick="etcpopup()"></td></tr>
+        <tr><td>지점정보 (최대 200개)</td><td><input id="branchList" type="button" value="지점정보" onclick="branchListpopup()"></tr>
+    </table>
+        <input type="submit" value="쿼리전송">
+    </form>
+</body>
+</html>

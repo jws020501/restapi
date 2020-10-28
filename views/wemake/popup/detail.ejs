@@ -1,0 +1,27 @@
+<html lang="ko">
+<head>
+    <title>basic</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>상세정보</h1>
+    <form method="POST" action="/popup/basic">
+    <table>
+        <tr><td>상품 대표 이미지 URL</td><td><input id="basicImgUrl" value="" type="text"></td><td><small>(최대 200자) - [최적화 가이드] 사이즈: 460*460 / 최소: 200*200 / 용량: 2MB 이하 / 파일 : JPG, JPEG, PNG</small></td></tr>
+        <tr><td>상품 추가 이미지 URL</td><td><input id="addImgUrlList" value="" type="text"></td><td><small>(최대 200자, 최대 2개( ,으로 구분)) - [최적화 가이드] 사이즈: 460*460 / 최소: 200*200 / 용량: 2MB 이하 / 파일 : JPG, JPEG, PNG</small></td></tr>
+        <tr><td>리스팅 이미지 URL</td><td><input id="listImgUrl" value="" type="text"></td><td><small>(최대 200자) - [최적화 가이드] 사이즈: 580*320 / 최소: 200*100 / 용량: 2MB 이하 / 파일 : JPG, JPEG, PNG</small></td></tr>
+        <tr><td>상세정보 타입</td><td><input id="descType" value="" type="text"></td><td><small>(IMG:이미지 - 아래 descImgUrlList 항목에 입력, HTML:html - 아래 descHtml 항목에 입력)</small></td></tr>
+        <tr><td>상품 상세설명 이미지 URL</td><td><input id="descImgUrlList" value="" type="text"></td><td><small>(최대 200자, 최대 50개( ,으로 구분)) - [최적화 가이드] 사이즈: 758*3000(최대) / 용량: 2MB 이하 / 파일 : JPG, JPEG, PNG</small></td></tr>
+        <tr><td>상품 상세설명 HTML(최대 65535byte)</td><td><input id="descHtml" value="" type="text"></td></tr>
+        </table>
+    <input type="submit" value="쿼리전송">
+    </form>
+</body>
+</html>

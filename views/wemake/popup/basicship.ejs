@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>basic</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>배송정보</h1>
+    <form method="POST" action="/popup/basicship">
+    <table>
+        <tr><td>반품/교환 배송비(편도)</td><td><input id="claimShipFee" value="" type="text"></td></tr>
+        <tr><td>출고지-우편번호(5자리)</td><td><input id="releaseZipCode" value="" type="text"></td></tr>
+        <tr><td>출고지-기본주소(도로명)</td><td><input id="releaseRoadAddress1" value="" type="text"></td></tr>
+        <tr><td>출고지-상세주소(도로명)</td><td><input id="releaseRoadAddress2" value="" type="text"></td></tr>
+        <tr><td>출고지-기본주소(지번)</td><td><input id="releaseAddress1" value="" type="text"></td></tr>
+        <tr><td>출고지-상세주소(지번)</td><td><input id="releaseAddress2" value="" type="text"></td></tr>
+        <tr><td>회수지-우편번호(5자리)</td><td><input id="returnZipCode" value="" type="text"></td></tr>
+        <tr><td>회수지-기본주소(도로명)</td><td><input id="returnRoadAddress1" value="" type="text"></td></tr>
+        <tr><td>회수지-상세주소(도로명)</td><td><input id="returnRoadAddress2" type="text" value=""></td></tr>
+        <tr><td>회수지-기본주소(지번)</td><td><input id="returnAddress1" type="text" value=""></td></tr>
+        <tr><td>회수지-상세주소(지번)</td><td><input id="returnAddress2" type="text" value=""></td></tr>
+        <tr><td>출고 기한 (1~15)</td><td><input id="releaseDay" type="text" value=""></td></tr>
+        <tr><td>출고기한 1일인경우출고시간(1~24)</td><td><input id="releaseTime" type="text" value=""></td></tr>
+        <tr><td>휴일제외여부</td><td><input id="holidayExceptYn" type="text" value=""></td><td><small>(Y:주말&공휴일 제외, A:주말&공휴일 및 전일제외, N:주말/공휴일 포함)</small></td></tr>
+    </table>
+    <input type="submit" value="쿼리전송">
+    </form>
+</body>
+</html>
