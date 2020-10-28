@@ -28,13 +28,6 @@ app.get("/delete",(req,res)=>{
         message:null
     })
 })
-
-
-app.get("/wemake",(req,res)=>{
-    res.render("wemake/wemake.ejs",{
-        message:null
-    })
-})
 app.get("/category",(req,res)=>{
     var api = " https://wapi-stg.wemakeprice.com/product/out/getCategory"
     var apikey = "687bb8fe6cb0fde0330b7f860862e57c94d2722d4eb2e4cba3619b6b2deaf22bf57c25225d8bb03584000fa1689556e39dc5a6992cb0de17021e9a2b5f1de402" 
@@ -398,16 +391,184 @@ app.post("/delete",(req,res)=>{
 
 })
 
+// basic
+var productName = null
+var productType = null
+var dcateCode = null
+var shipPolicyNo = null
+var adultLimitYn = null
+var displayYn = null
+var bizYn = null
+var brandNo = null
+var makerNo = null
 
+//basicship
+var claimShipFee = null
+var releaseZipCode = null
+var releaseRoadAddress1 = null
+var releaseRoadAddress2 = null
+var releaseAddress1 = null
+var releaseAddress2 = null
+var returnZipCode = null
+var returnRoadAddress1 = null
+var returnRoadAddress2 = null
+var returnAddress1 = null
+var returnAddress2 = null
+var releaseDay = null
+var releaseTime = null
+var holidayExceptYn = null
+
+//sale
+var salePeriod = null
+var saleStartDate = null
+var saleEndDate = null
+var originPrice = null
+var salePrice = null
+var stockCount = null
+var taxYn = null
+var purchaseMinCount = null
+var purchaseLimitYn = null
+var purchaseLimitDuration = null
+var purchaseLimitDay = null
+var purchaseLimitCount = null
+var basketLimitYn = null
+var referencePriceType = null
+
+//detail
+var basicImgUrl = null
+var addImgUrlList = null
+var listImgUrl = null
+var descType = null
+var descImgUrlList = null
+var descHtml = null
+
+
+app.get("/wemake",(req,res)=>{
+    // basic
+        productName = null
+        productType = null
+        dcateCode = null
+        shipPolicyNo = null
+        adultLimitYn = null
+        displayYn = null
+        bizYn = null
+        brandNo = null
+        makerNo = null
+    
+    //basicship
+        claimShipFee = null
+        releaseZipCode = null
+        releaseRoadAddress1 = null
+        releaseRoadAddress2 = null
+        releaseAddress1 = null
+        releaseAddress2 = null
+        returnZipCode = null
+        returnRoadAddress1 = null
+        returnRoadAddress2 = null
+        returnAddress1 = null
+        returnAddress2 = null
+        releaseDay = null
+        releaseTime = null
+        holidayExceptYn = null
+    
+    //sale
+        salePeriod = null
+        saleStartDate = null
+        saleEndDate = null
+        originPrice = null
+        salePrice = null
+        stockCount = null
+        taxYn = null
+        purchaseMinCount = null
+        purchaseLimitYn = null
+        purchaseLimitDuration = null
+        purchaseLimitDay = null
+        purchaseLimitCount = null
+        basketLimitYn = null
+        referencePriceType = null
+    
+    //detail
+        basicImgUrl = null
+        addImgUrlList = null
+        listImgUrl = null
+        descType = null
+        descImgUrlList = null
+        descHtml = null
+    
+        res.render("wemake/wemake.ejs",{
+            message:null
+        })
+    })
 
 app.get("/popup/basic",(req,res)=>{
     res.render("wemake/popup/basic.ejs")
 })
+
+app.post("/popup/basic",(req,res)=>{
+    productName = req.body.productName
+    productType = req.body.productType
+    dcateCode = req.body.dcateCode
+    shipPolicyNo = req.body.shipPolicyNo
+    adultLimitYn = req.body.adultLimitYn
+    displayYn = req.body.displayYn
+    bizYn = req.body.bizYn
+    brandNo = req.body.brandNo
+    makerNo = req.body.makerNo
+
+})
+
+app.get("/popup/basicship",(req,res)=>{
+    res.render("wemake/popup/basicship")
+})
+
+app.post("/popup/basicship",(req,res)=>{
+    claimShipFee = req.body.claimShipFee
+    releaseZipCode = req.body.releaseZipCode
+    releaseRoadAddress1 = req.body.returnRoadAddress1
+    releaseRoadAddress2 = req.body.returnRoadAddress2
+    releaseAddress1 = req.body.releaseAddress1
+    releaseAddress2 = req.body.releaseAddress2
+    returnZipCode = req.body.returnZipCode
+    returnRoadAddress1 = req.body.returnRoadAddress1
+    returnRoadAddress2 = req.body.returnRoadAddress2
+    returnAddress1 = req.body.returnAddress1
+    returnAddress2 = req.body.returnAddress2
+    releaseDay = req.body.releaseDay
+    releaseTime = req.body.releaseTime
+    holidayExceptYn = req.body.holidayExceptYn
+})
+
 app.get("/popup/sale",(req,res)=>{
     res.render("wemake/popup/sale.ejs")
 })
+
+app.post("/popup/sale",(req,res)=>{
+    salePeriod = req.body.salePeriod
+    saleStartDate = req.body.saleStartDate
+    saleEndDate = req.body.saleEndDate
+    originPrice = req.body.originPrice
+    salePrice = req.body.salePrice
+    stockCount = req.body.stockCount
+    taxYn = req.body.taxYn
+    purchaseMinCount = req.body.purchaseMinCount
+    purchaseLimitYn = req.body.purchaseLimitYn
+    purchaseLimitDuration = req.body.purchaseLimitDuration
+    purchaseLimitDay = req.body.purchaseLimitDay
+    purchaseLimitCount = req.body.purchaseLimitCount
+    basketLimitYn = req.body.basketLimitYn
+    referencePriceType = req.body.referencePriceType
+})
+
 app.get("/popup/detail",(req,res)=>{
     res.render("wemake/popup/detail.ejs")
+})
+app.post("/popup/detail",(req,res)=>{
+    basicImgUrl = req.body.basicImgUrl
+    addImgUrlList = req.body.addImgUrlList
+    listImgUrl = req.body.listImgUrl
+    descType = req.body.descType
+    descImgUrlList = req.body.descImgUrlList
+    descHtml = req.body.descHtml
 })
 app.get("/popup/option",(req,res)=>{
     res.render("wemake/popup/option.ejs")
@@ -420,9 +581,6 @@ app.get("/popup/etc",(req,res)=>{
 })
 app.get("/popup/branchList",(req,res)=>{
     res.render("wemake/popup/branchList.ejs")
-})
-app.get("/popup/basicship",(req,res)=>{
-    res.render("wemake/popup/basicship")
 })
 
 
@@ -458,7 +616,7 @@ app.post("/product",(req,res)=>{
                         returnRoadAddress1 : returnRoadAddress1, 
                         returnRoadAddress2 : returnRoadAddress2, 
                         returnAddress1 : returnAddress1,
-                        returnAddress2 : returnAddress1, 
+                        returnAddress2 : returnAddress2, 
                         releaseDay : releaseDay,
                         releaseTime : releaseTime,
                         holidayExceptYn : holidayExceptYn
@@ -546,6 +704,7 @@ app.post("/product",(req,res)=>{
                     kcLifeChemistryCertificationList : [{
                         certificationType : certificationType,
                         certificationNo : certificationNo }],
+                    mdName:mdName,
                     sellerProdCode: sellerProdCode, 
                     priceComparisonSiteYn : priceComparisonSiteYn, 
                     keywordPriceComparisonSite : keywordPriceComparisonSite, 
